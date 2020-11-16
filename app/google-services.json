@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "185407523480",
+    "firebase_url": "https://bloodpressure-854fb.firebaseio.com",
+    "project_id": "bloodpressure-854fb",
+    "storage_bucket": "bloodpressure-854fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185407523480:android:b83590bbc6520ef9f65eed",
+        "android_client_info": {
+          "package_name": "ca.bcit.bloodpressureassignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185407523480-2lcfg5ae5oss3pd1h391e53040os1ksn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAg7MyQRidpsci09ZexkcV2YkZ07GtssiM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "185407523480-2lcfg5ae5oss3pd1h391e53040os1ksn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185407523480:android:073fa912f1fc2837f65eed",
+        "android_client_info": {
+          "package_name": "ca.bcit.bloodpressurerecorder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185407523480-2lcfg5ae5oss3pd1h391e53040os1ksn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAg7MyQRidpsci09ZexkcV2YkZ07GtssiM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "185407523480-2lcfg5ae5oss3pd1h391e53040os1ksn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

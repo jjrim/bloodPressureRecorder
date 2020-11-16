@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">BPR</string>
+    <string name="systolic">Systolic pressure</string>
+    <string name="diastolic">Diastolic pressure</string>
+    <string name="done">done</string>
+    <string name="btnAddBP">RECORD BLOOD PRESSURE</string>
+
+
+    <array name="familyMember" >
+        <item>father@home.com</item>
+        <item>mother@home.com</item>
+        <item>grandma@home.com</item>
+        <item>grandpa@home.com</item>
+    </array>
+
+    <string name="hintFirstName">First Name</string>
+    <string name="hintLastName">Last Name</string>
+    <string name="btnAddStudent">Add Student</string>
+    <string name="enterNewName">Enter New Name</string>
+    <string name="btnUpdate">Update</string>
+    <string name="btnDelete">Delete</string>
+
+
+
+</resources>
