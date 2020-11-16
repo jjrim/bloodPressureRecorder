@@ -22,10 +22,23 @@ public class MemberActivity extends AppCompatActivity {
 
     DatabaseReference databaseBloodPressures;
     List<BloodPressure> BPFList;
+    TextView month;
     TextView father;
     TextView fatherSystolicAvg;
     TextView fatherDiastolicAvg;
     TextView fatherCondition;
+    TextView mother;
+    TextView motherSystolicAvg;
+    TextView motherDiastolicAvg;
+    TextView motherCondition;
+    TextView grandma;
+    TextView grandmaSystolicAvg;
+    TextView grandmaDiastolicAvg;
+    TextView grandmaCondition;
+    TextView grandpa;
+    TextView grandpaSystolicAvg;
+    TextView grandpaDiastolicAvg;
+    TextView grandpaCondition;
 
     ListView lvBPs;
 
@@ -38,13 +51,23 @@ public class MemberActivity extends AppCompatActivity {
 
 //        lvBPs = findViewById(R.id.list);
         BPFList = new ArrayList<BloodPressure>();
+        month = findViewById(R.id.month);
         father = findViewById(R.id.father);
         fatherSystolicAvg = findViewById(R.id.fatherSystolicAvg);
         fatherDiastolicAvg = findViewById(R.id.fatherDiastolicAvg);
         fatherCondition = findViewById(R.id.fatherCondition);
-
-
-
+        mother = findViewById(R.id.mother);
+        motherSystolicAvg = findViewById(R.id.motherSystolicAvg);
+        motherDiastolicAvg = findViewById(R.id.motherDiastolicAvg);
+        motherCondition = findViewById(R.id.motherCondition);
+        grandma = findViewById(R.id.grandma);
+        grandmaSystolicAvg = findViewById(R.id.grandmaSystolicAvg);
+        grandmaDiastolicAvg = findViewById(R.id.grandmaDiastolicAvg);
+        grandmaCondition = findViewById(R.id.grandmaCondition);
+        grandpa = findViewById(R.id.grandpa);
+        grandpaSystolicAvg = findViewById(R.id.grandpaSystolicAvg);
+        grandpaDiastolicAvg = findViewById(R.id.grandpaDiastolicAvg);
+        grandpaCondition = findViewById(R.id.grandpaCondition);
 
     }
 
@@ -64,13 +87,36 @@ public class MemberActivity extends AppCompatActivity {
                 float fSAvg = 0;
                 float fDAvg = 0;
                 int fCount = 0;
-                String fCondition;
+                float mSAvg = 0;
+                float mDAvg = 0;
+                int mCount = 0;
+                float gmSAvg = 0;
+                float gmDAvg = 0;
+                int gmCount = 0;
+                float gpSAvg = 0;
+                float gpDAvg = 0;
+                int gpCount = 0;
 
                 for (int i = 0; i < BPFList.size(); i++) {
                     if (BPFList.get(i).getFamilyMember().equals("father@home.com")) {
                         fCount++;
                         fSAvg = fSAvg + Float.parseFloat(BPFList.get(i).getSystolicReading());
                         fDAvg = fDAvg + Float.parseFloat(BPFList.get(i).getDiastolicReading());
+                    }
+                    else if (BPFList.get(i).getFamilyMember().equals("mother@home.com")) {
+                        mCount++;
+                        mSAvg = mSAvg + Float.parseFloat(BPFList.get(i).getSystolicReading());
+                        mDAvg = mDAvg + Float.parseFloat(BPFList.get(i).getDiastolicReading());
+                    }
+                    else if (BPFList.get(i).getFamilyMember().equals("grandma@home.com")) {
+                        gmCount++;
+                        gmSAvg = gmSAvg + Float.parseFloat(BPFList.get(i).getSystolicReading());
+                        gmDAvg = gmDAvg + Float.parseFloat(BPFList.get(i).getDiastolicReading());
+                    }
+                    else if (BPFList.get(i).getFamilyMember().equals("grandpa@home.com")) {
+                        gpCount++;
+                        gpSAvg = gpSAvg + Float.parseFloat(BPFList.get(i).getSystolicReading());
+                        gpDAvg = gpDAvg + Float.parseFloat(BPFList.get(i).getDiastolicReading());
                     }
 
                 }
@@ -79,6 +125,18 @@ public class MemberActivity extends AppCompatActivity {
                 fatherSystolicAvg.setText("Father Average Systolic average reading is: " + fSAvg / fCount);
                 fatherDiastolicAvg.setText("Father Average Diastolic average reading is: " + fDAvg / fCount);
                 fatherCondition.setText(conditionDecider((fSAvg / fCount), (fDAvg / fCount)));
+                mother.setText("mother@home.com");
+                motherSystolicAvg.setText("Mother Average Systolic average reading is: " + mSAvg / mCount);
+                motherDiastolicAvg.setText("Mother Average Diastolic average reading is: " + mDAvg / mCount);
+                motherCondition.setText(conditionDecider((mSAvg / mCount), (mDAvg / mCount)));
+                grandma.setText("grandma@home.com");
+                grandmaSystolicAvg.setText("Grandma Average Systolic average reading is: " + gmSAvg / gmCount);
+                grandmaDiastolicAvg.setText("Grandma Average Diastolic average reading is: " + gmDAvg / gmCount);
+                grandmaCondition.setText(conditionDecider((gmSAvg / gmCount), (gmDAvg / gmCount)));
+                grandpa.setText("grandpa@home.com");
+                grandpaSystolicAvg.setText("Grandpa Average Systolic average reading is: " + gpSAvg / gpCount);
+                grandpaDiastolicAvg.setText("Grandpa Average Diastolic average reading is: " + gpDAvg / gpCount);
+                grandpaCondition.setText(conditionDecider((gpSAvg / gpCount), (gpDAvg / gpCount)));
             }
 
             @Override
