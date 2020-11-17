@@ -15,6 +15,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -89,6 +90,10 @@ public class MemberActivity extends AppCompatActivity {
                 int monthInt = cal.get(Calendar.MONTH);
 
 
+                SimpleDateFormat sf = new SimpleDateFormat("MMMM");
+                String strMonth= sf.format(new Date());
+
+
                 float fSAvg = 0;
                 float fDAvg = 0;
                 int fCount = 0;
@@ -102,31 +107,32 @@ public class MemberActivity extends AppCompatActivity {
                 float gpDAvg = 0;
                 int gpCount = 0;
 
+
+
                 for (int i = 0; i < BPFList.size(); i++) {
-                    if (BPFList.get(i).getFamilyMember().equals("father@home.com")) {
-                        fCount++;
-                        fSAvg = fSAvg + Float.parseFloat(BPFList.get(i).getSystolicReading());
-                        fDAvg = fDAvg + Float.parseFloat(BPFList.get(i).getDiastolicReading());
-                    }
-                    else if (BPFList.get(i).getFamilyMember().equals("mother@home.com")) {
-                        mCount++;
-                        mSAvg = mSAvg + Float.parseFloat(BPFList.get(i).getSystolicReading());
-                        mDAvg = mDAvg + Float.parseFloat(BPFList.get(i).getDiastolicReading());
-                    }
-                    else if (BPFList.get(i).getFamilyMember().equals("grandma@home.com")) {
-                        gmCount++;
-                        gmSAvg = gmSAvg + Float.parseFloat(BPFList.get(i).getSystolicReading());
-                        gmDAvg = gmDAvg + Float.parseFloat(BPFList.get(i).getDiastolicReading());
-                    }
-                    else if (BPFList.get(i).getFamilyMember().equals("grandpa@home.com")) {
-                        gpCount++;
-                        gpSAvg = gpSAvg + Float.parseFloat(BPFList.get(i).getSystolicReading());
-                        gpDAvg = gpDAvg + Float.parseFloat(BPFList.get(i).getDiastolicReading());
+                    if (new Date().getMonth() == BPFList.get(i).getDateTime().getMonth()) {
+                        if (BPFList.get(i).getFamilyMember().equals("father@home.com")) {
+                            fCount++;
+                            fSAvg = fSAvg + Float.parseFloat(BPFList.get(i).getSystolicReading());
+                            fDAvg = fDAvg + Float.parseFloat(BPFList.get(i).getDiastolicReading());
+                        } else if (BPFList.get(i).getFamilyMember().equals("mother@home.com")) {
+                            mCount++;
+                            mSAvg = mSAvg + Float.parseFloat(BPFList.get(i).getSystolicReading());
+                            mDAvg = mDAvg + Float.parseFloat(BPFList.get(i).getDiastolicReading());
+                        } else if (BPFList.get(i).getFamilyMember().equals("grandma@home.com")) {
+                            gmCount++;
+                            gmSAvg = gmSAvg + Float.parseFloat(BPFList.get(i).getSystolicReading());
+                            gmDAvg = gmDAvg + Float.parseFloat(BPFList.get(i).getDiastolicReading());
+                        } else if (BPFList.get(i).getFamilyMember().equals("grandpa@home.com")) {
+                            gpCount++;
+                            gpSAvg = gpSAvg + Float.parseFloat(BPFList.get(i).getSystolicReading());
+                            gpDAvg = gpDAvg + Float.parseFloat(BPFList.get(i).getDiastolicReading());
+                        }
                     }
 
                 }
 
-                month.setText("Month is: " + monthInt);
+                month.setText("Month-to-date average readings for " + strMonth + "2020");
                 father.setText("father@home.com");
                 fatherSystolicAvg.setText("Father Average Systolic average reading is: " + fSAvg / fCount);
                 fatherDiastolicAvg.setText("Father Average Diastolic average reading is: " + fDAvg / fCount);
