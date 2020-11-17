@@ -4,6 +4,7 @@
     <string name="diastolic">Diastolic pressure</string>
     <string name="done">done</string>
     <string name="btnAddBP">RECORD BLOOD PRESSURE</string>
+    <string name="made_by">Made by Jay R and Alireza K</string>
 
 
     <array name="familyMember" >

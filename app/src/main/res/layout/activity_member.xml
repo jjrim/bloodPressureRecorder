@@ -5,9 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#093145"
     tools:context=".MemberActivity">
 
     <TextView
+        android:textColor="#FFFFFF"
         android:id="@+id/month"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:layout_width="match_parent"
@@ -15,6 +17,7 @@
         android:text="TextView" />
 
     <TextView
+        android:textColor="#FFFFFF"
         android:id="@+id/father"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:layout_width="match_parent"
@@ -25,18 +28,24 @@
         android:id="@+id/fatherSystolicAvg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:text="TextView" />
 
     <TextView
         android:id="@+id/fatherDiastolicAvg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:text="TextView" />
 
     <TextView
         android:id="@+id/fatherCondition"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:text="TextView" />
 
     <TextView
@@ -44,24 +53,32 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:text="TextView" />
 
     <TextView
         android:id="@+id/motherSystolicAvg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:text="TextView" />
 
     <TextView
         android:id="@+id/motherDiastolicAvg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:text="TextView" />
 
     <TextView
         android:id="@+id/motherCondition"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:text="TextView" />
 
 
@@ -70,11 +87,15 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:text="TextView" />
 
     <TextView
         android:id="@+id/grandpaSystolicAvg"
         android:layout_width="match_parent"
+        android:textColor="#FFFFFF"
+
         android:layout_height="wrap_content"
         android:text="TextView" />
 
@@ -82,12 +103,16 @@
         android:id="@+id/grandpaDiastolicAvg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:text="TextView" />
 
     <TextView
         android:id="@+id/grandpaCondition"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:text="TextView" />
 
     <TextView
@@ -95,24 +120,32 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:text="TextView" />
 
     <TextView
         android:id="@+id/grandmaSystolicAvg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:text="TextView" />
 
     <TextView
         android:id="@+id/grandmaDiastolicAvg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:text="TextView" />
 
     <TextView
         android:id="@+id/grandmaCondition"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:text="TextView" />
 
 

@@ -272,22 +272,10 @@ public class MainActivity extends AppCompatActivity {
                 String diastolicReading = editTextDiastolic.getText().toString().trim();
                 String family = familyMember.getSelectedItem().toString().trim();
 
-//                String systolicString = systolic.getText().toString().trim();
-//                int systolicPressure = Integer.parseInt(systolicString);
-//                String diastolicString = diastolic.getText().toString().trim();
-//                int diastolicPressure = Integer.parseInt(diastolicString);
-//                String family = familyMember.getSelectedItem().toString().trim();
 
                 String condition = conditionDecider(systolicReading, diastolicReading);
                 Date dateTime = new Date();
 
-//                if (TextUtils.isEmpty(firstName)) {
-//                    editTextFirstName.setError("First Name is required");
-//                    return;
-//                } else if (TextUtils.isEmpty(lastName)) {
-//                    editTextLastName.setError("Last Name is required");
-//                    return;
-//                }
 
                 updatePressures(bloodPressureId, systolicReading, diastolicReading, family, dateTime, condition);
 

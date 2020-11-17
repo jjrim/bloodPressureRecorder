@@ -3,12 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="#093145"
     android:layout_height="match_parent">
+
 
     <EditText
         android:id="@+id/systolic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:ems="10"
         android:hint="@string/hintFirstName"
         android:inputType="textPersonName" />
@@ -17,6 +21,8 @@
         android:id="@+id/diastolic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:ems="10"
         android:hint="@string/hintLastName"
         android:inputType="textPersonName" />
@@ -25,18 +31,24 @@
         android:id="@+id/familyMember"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:entries="@array/familyMember" />
 
     <Button
         android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:text="@string/btnUpdate" />
 
     <Button
         android:id="@+id/btnDelete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         android:text="@string/btnDelete" />
 
 </LinearLayout>

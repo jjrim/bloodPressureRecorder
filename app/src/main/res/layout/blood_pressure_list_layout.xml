@@ -2,23 +2,31 @@
 <LinearLayout
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#093145"
+    >
 
 
     <TextView
         android:id="@+id/pressure"
+        android:textColor="#FFFFFF"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/condition"
+        android:textColor="#FFFFFF"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/familyMember"
+        android:textColor="#FFFFFF"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView" />

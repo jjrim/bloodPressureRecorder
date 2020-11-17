@@ -5,9 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#093145"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_marginTop="15dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/AppDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="10dp"
+        android:text="@string/made_by"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
     <EditText
+        android:textColor="#FFFFFF"
+
         android:id="@+id/systolic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,6 +40,8 @@
     <EditText
         android:id="@+id/diastolic"
         android:layout_width="match_parent"
+        android:textColor="#FFFFFF"
+
         android:layout_height="wrap_content"
         android:hint="@string/diastolic"
         android:inputType="textPersonName" />
@@ -26,6 +50,8 @@
         android:id="@+id/familyMember"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+
         tools:listitem="@layout/support_simple_spinner_dropdown_item"
         android:entries="@array/familyMember"/>
 
