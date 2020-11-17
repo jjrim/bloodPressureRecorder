@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,11 +34,12 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText systolic;
-    EditText diastolic;
-    Button addBloodPressure;
-    Button moveToReport;
-    Spinner familyMember;
+    private EditText systolic;
+    private EditText diastolic;
+    private Button addBloodPressure;
+    private Button  moveToReport;
+    private Spinner familyMember;
+    private LinearLayout linearLayout;
 
     DatabaseReference databaseBloodPressures;
 
@@ -49,8 +52,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        databaseBloodPressures = FirebaseDatabase.getInstance().getReference("bloodPressures");
+        linearLayout = findViewById(R.id.linearLayout);
 
+        databaseBloodPressures = FirebaseDatabase.getInstance().getReference("bloodPressures");
 
         systolic = findViewById(R.id.systolic);
         diastolic = findViewById(R.id.diastolic);
@@ -92,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
     }
 
     @Override
@@ -165,9 +168,10 @@ public class MainActivity extends AppCompatActivity {
             public void onSuccess(Object o) {
                 if (condition.equals("Warning!: Hypertensive Crisis")) {
                     Toast.makeText(MainActivity.this,"Warning.",Toast.LENGTH_LONG).show();
+                    showSnackbar();
 
                 }
-                Toast.makeText(MainActivity.this,"Blood Pressure added.",Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this,"Blood pressure added.",Toast.LENGTH_LONG).show();
 
                 systolic.setText("");
                 diastolic.setText("");
@@ -193,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(Object o) {
                 Toast.makeText(MainActivity.this,
-                        "Blood Preesure Deleted.",Toast.LENGTH_LONG).show();
+                        "Blood pressure Deleted.",Toast.LENGTH_LONG).show();
             }
         });
 
@@ -293,6 +297,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void showSnackbar() {
+        final Snackbar snackbar = Snackbar.make(linearLayout, "Your blood pressure is too high. Please go see a doctor.", Snackbar.LENGTH_INDEFINITE );
+
+        snackbar.setAction("Close", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                snackbar.dismiss();
+            }
+        });
+        snackbar.show();
     }
 
 
