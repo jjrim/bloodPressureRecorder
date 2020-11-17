@@ -16,6 +16,8 @@ import com.google.firebase.database.ValueEventListener;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class MemberActivity extends AppCompatActivity {
@@ -40,7 +42,6 @@ public class MemberActivity extends AppCompatActivity {
     TextView grandpaDiastolicAvg;
     TextView grandpaCondition;
 
-    ListView lvBPs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,6 @@ public class MemberActivity extends AppCompatActivity {
 
         databaseBloodPressures = FirebaseDatabase.getInstance().getReference("bloodPressures");
 
-//        lvBPs = findViewById(R.id.list);
         BPFList = new ArrayList<BloodPressure>();
         month = findViewById(R.id.month);
         father = findViewById(R.id.father);
@@ -82,6 +82,11 @@ public class MemberActivity extends AppCompatActivity {
                     BloodPressure bloodPressure = studentSnapshot.getValue(BloodPressure.class);
                     BPFList.add(bloodPressure);
                 }
+
+                Date date = new Date();
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(date);
+                int monthInt = cal.get(Calendar.MONTH);
 
 
                 float fSAvg = 0;
@@ -121,6 +126,7 @@ public class MemberActivity extends AppCompatActivity {
 
                 }
 
+                month.setText("Month is: " + monthInt);
                 father.setText("father@home.com");
                 fatherSystolicAvg.setText("Father Average Systolic average reading is: " + fSAvg / fCount);
                 fatherDiastolicAvg.setText("Father Average Diastolic average reading is: " + fDAvg / fCount);
