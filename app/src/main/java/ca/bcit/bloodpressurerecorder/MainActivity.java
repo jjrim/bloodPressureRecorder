@@ -143,8 +143,6 @@ public class MainActivity extends AppCompatActivity {
         String systolicString = systolic.getText().toString().trim();
         String diastolicString = diastolic.getText().toString().trim();
         String family = familyMember.getSelectedItem().toString().trim();
-        final String condition = conditionDecider(systolicString, diastolicString);
-        Date dateTime = new Date();
 
         if (TextUtils.isEmpty(systolicString)) {
             Toast.makeText(this, "Systolic Pressure is empty", Toast.LENGTH_LONG).show();
@@ -155,6 +153,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Diastolic Pressure is empty.", Toast.LENGTH_LONG).show();
             return;
         }
+        final String condition = conditionDecider(systolicString, diastolicString);
+        Date dateTime = new Date();
+
+
 
 
 
